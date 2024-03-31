@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+<div class="box">
+    <body>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <div class="img__inner">
+            <div class="img__card">
+                <a href="{% url 'app:index' %}">
+                    <img src="../static/images/203.jpg" alt="ホーム" class="img-item">  
+                </a> 
+                
+                <p class="img-txt">ホーム</p>   
+            </div>
+
+            <div class="img__card">
+                <a href="{% url 'mail:contactFn' %}">
+                    <img src="../static/images/email.syasin.jpg" alt="メッセージ" class="img-item">
+                </a>
+                <p class="img-txt">メッセージ</p>
+            </div>
+     
+        </div>
+    </body>
+</div>
+
+    <main>
+        {% block contents %}{% endblock %}
+    </main>
+
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+          <p class="float-end mb-1">
+            <a href="/">Back to top</a>
+          </p>
+          <p class="mb-1">Inventory control is &copy: Bootstrap, but please post a lot!</p>
+        </div>
+      </footer>
+</html>

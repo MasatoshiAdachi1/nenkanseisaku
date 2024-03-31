@@ -1,0 +1,33 @@
+.img__inner {
+
+    display: flex;
+ 
+    gap: 30px;
+ 
+ 
+    max-width: 1000px;
+ 
+    margin: 0 auto;
+ 
+ }
+.box{
+   height: 300px;
+}
+ 
+ .img__card {
+ 
+    width: 33.333%;
+ 
+ }
+ 
+ .img-item {
+ 
+    width: 50%;
+ 
+    height: 70%;
+ 
+    object-fit: cover; 
+ 
+    border: 1px solid #111;
+ 
+ }

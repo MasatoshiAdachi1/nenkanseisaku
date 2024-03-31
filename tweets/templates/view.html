@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block title %}Adatter{% endblock %}
+{% block contents %}
+<!DOCTYPE html>
+<html lang="en">
+    <title>投稿一覧</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- カスタムCSS -->
+    <style>
+        /* カスタムスタイル */
+        .post {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .post h2 {
+            color: #333;
+        }
+        .post p {
+            color: #666;
+        }
+    </style>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">投稿一覧</h1>
+        <div class="row">
+          {% for i in item %}
+            <div class="col-md-6">
+                <div class="post">
+                  <li>{{ i.item }}</li>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+<a href="{% url 'tweets:kanri' %}">登録する</a>
+{% endblock %}

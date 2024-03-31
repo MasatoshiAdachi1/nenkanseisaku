@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Adatter{% endblock %}
+{% block contents %}
+
+<div style="text-align: center;">
+    <h1>Tweet</h1>
+    <div>
+        <h2>ツイート内容を入力してください</h2>
+        {% for unti in tweet_list %}
+        <div>
+            {{unti.item}}:
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <form action="post" method="post">
+            {% csrf_token %}
+            <div>
+                
+                <label for="id_item">本文：</label>
+                <br>
+                <textarea id="id_item" name="item" rows="10" cols="80" ></textarea>
+            </div>
+            <input type="submit" value="送信" />
+        </form>
+    </div>
+</div>
+
+<div style="text-align: center">
+<a href='{% url "tweets:item" %}' >閲覧する</a>
+</div>
+
+{% endblock %}
